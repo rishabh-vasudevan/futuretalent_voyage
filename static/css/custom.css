@@ -1,0 +1,344 @@
+
+
+/* rubik-300 - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 300;
+  src: url('../fonts/rubik-v12-latin-300.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/rubik-v12-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-v12-latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-v12-latin-300.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-v12-latin-300.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-v12-latin-300.svg#Rubik') format('svg'); /* Legacy iOS */
+}
+/* rubik-regular - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/rubik-v12-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/rubik-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-v12-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-v12-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-v12-latin-regular.svg#Rubik') format('svg'); /* Legacy iOS */
+}
+/* rubik-500 - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/rubik-v12-latin-500.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/rubik-v12-latin-500.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-v12-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-v12-latin-500.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-v12-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-v12-latin-500.svg#Rubik') format('svg'); /* Legacy iOS */
+}
+/* rubik-600 - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/rubik-v12-latin-600.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/rubik-v12-latin-600.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-v12-latin-600.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-v12-latin-600.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-v12-latin-600.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-v12-latin-600.svg#Rubik') format('svg'); /* Legacy iOS */
+}
+/* rubik-700 - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/rubik-v12-latin-700.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/rubik-v12-latin-700.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-v12-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-v12-latin-700.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-v12-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-v12-latin-700.svg#Rubik') format('svg'); /* Legacy iOS */
+}
+/* rubik-800 - latin */
+@font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 800;
+  src: url('../fonts/rubik-v12-latin-800.eot'); /* IE9 Compat Modes */
+  src: local(''),
+       url('../fonts/rubik-v12-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/rubik-v12-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/rubik-v12-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/rubik-v12-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/rubik-v12-latin-800.svg#Rubik') format('svg'); /* Legacy iOS */
+}
+
+body {font-family: 'Rubik';background-color: #f2f2f2}
+
+:hover {transition: 0.5s all ease-in-out}
+
+/* Image Zoom Effect */
+.zoom-img {overflow: hidden;}
+.zoom-img img {width: 100%;transition: 0.5s all ease-in-out}
+.zoom-img:hover img {transform: scale(1.5);}
+
+/* Header CSS */
+header {border-top:5px solid #f04f1d;padding: 10px 0;background-color: #fff}
+.navbar-expand-lg .navbar-nav .nav-link {padding-right: 1rem;padding-left: 1rem;text-transform: uppercase;font-size: 15px;}
+.navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
+    background-color: #f04f1d;color: #fff;border-radius: 50px;
+}
+.navbar-expand-lg .navbar-nav .nav-item {margin:0 5px;}
+.navbar-expand-lg .navbar-nav .nav-link:hover {background-color: #f04f1d;color: #fff;border-radius: 50px;}
+
+/* Heading Small Underline */
+.divider {width: 150px;margin:20px auto;background: #f04f1d;height: 2px;}
+
+/* Banner CSS */
+#banner {
+	width: 100%;
+    height: 500px;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+}
+#banner h1 {
+    font-size: 45px;
+    font-weight: 700;
+}
+#banner p {font-size: 17px;line-height: 24px;}
+form.searchForm {
+    background: #ffffff none repeat scroll 0 0;
+    box-shadow: 0 10px 15px 0 rgb(0 0 0 / 10%);
+    margin-top: -50px;
+    padding: 50px 70px;
+    position: relative;
+    z-index: 2;
+}
+.searchForm .btn.btn-primary {background-color: #f04f1d;border-color: #f04f1d}
+.searchForm .btn.btn-primary:hover {background-color: #272525}
+
+/* Rooms Listing */
+#rooms {padding: 60px 0;background-color: #f2f2f2}
+#rooms h2 {font-size: 35px;text-align: center;padding-bottom: 0px;}
+
+#rooms .card {margin-top: 25px;}
+#rooms .card:hover {box-shadow: 2px 1px 10px rgba(0,0,0,.5);}
+#rooms .card-title {font-weight: 700;color: #f04f1d;font-size: 20px;}
+#rooms .more-btn {width: 100%;padding: 50px 0;text-align: center;}
+#rooms .more-btn a.btn {background-color: #f04f1d;color: #fff;border-radius: 50px;padding: 7px 25px;}
+#rooms .more-btn a.btn:hover {background-color: #272525;box-shadow: 5px 3px 5px rgba(0,0,0,0.7)}
+
+/* Home About Us Part */
+#about {padding: 100px 0 0;}
+#about .container {background-color: #fff;padding:50px 30px;}
+#about .container:hover {box-shadow: 4px 0px 10px rgba(0,0,0,0.2)}
+#about p.big {font-size: 17px;font-weight: 500}
+#about p {color: #4d4a4a;font-size: 14px;}
+
+/* Booking BG Section Home Page */
+.bg-book {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+.bg-book {
+    background: url(../imgs/bg2.jpg);
+    padding: 90px 0;
+    position: relative;
+    z-index: 992;
+    background-attachment: fixed;
+}
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.booking .booking-box .booking-box-head {
+    font-size: 43px;
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.booking .booking-box .booking-box-cost {
+    font-size: 21px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.btn-default {
+    display: inline-block;
+    padding: 10px 25px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    border: 1px solid #f04f1d;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 50px;
+    background-color: #f04f1d;
+    line-height: 1.75;
+}
+
+/* Testimonial Home Page */
+#testimonial {padding: 70px 0;}
+#testimonial .testi-box {
+    padding: 30px 30px 60px 60px;
+    background: #fff;
+    font-size: 13px;
+    position: relative;
+    border: 1px solid #d8d8d8;
+}
+#testimonial .testi-box .testi-box-inn {
+    margin-bottom: 15px;
+    position: relative;
+    font-weight: 500;
+    font-size: 17px;
+}
+#testimonial .testi-box .testi-box-inn i {
+    color: #f04f1d;
+}
+#testimonial .testi-box .testi-box-inn span {
+    color: #f04f1d;
+}
+#testimonial .testi-box p {
+    font-weight: 400;
+    font-style: italic;
+    margin: 0;
+    font-size: 15px;
+}
+#testimonial .testi-box-user {
+    padding-left: 30px;
+    margin-top: -43px;
+    position: relative;
+}
+#testimonial .testi-box-user .user_img {
+    float: left;
+    border: 2px solid #fafafa;
+    border-radius: 50%;
+}
+#testimonial .testi-box-user .user_img img {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    border: 2px solid #d8d8d8;
+    padding: 10px;
+}
+#testimonial .testi-box-user .testi-user {
+    float: right;
+    background: #fff;
+    padding: 5px 16px;
+    border-radius: 15px;
+    margin-top: 26px;
+    margin-right: 30px;
+    border: 2px solid #d8d8d8;
+}
+
+/* Footer Section */
+footer {
+    background: #353434;
+    padding: 25px 0;
+    text-align: center;
+    color: #fff;
+}
+footer p {margin:0;}
+
+/* Book Now Button CSS */
+.btn-details {
+	background-color: #f04f1d;
+	border-color: #f04f1d;
+	color: #fff;
+	border-radius: 50px;
+	font-size: 14px;
+	padding: 5px 20px;
+}
+.btn-details-lg {
+	background-color: #f04f1d;
+	border-color: #f04f1d;
+	color: #fff;
+	border-radius: 50px;
+	font-size: 16px;
+	padding: 7px 20px;
+}
+
+/* Booking Form Internal Pages */
+form#bookingForm {
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #d2d2d2;
+}
+form#bookingForm .box h3 {
+    font-size: 22px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #c1c1c1;
+    margin-bottom: 20px;
+    color: #f04f1d;
+}
+
+/* Internal Page Room detail box CSS */
+#quick-dets {
+    width: 100%;
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #d2d2d2;
+    margin-bottom: 30px;
+}
+#quick-dets h3 {font-weight: 600;color: #f04f1d;}
+#quick-dets p {font-size: 15px;}
+
+/* Login Register Form CSS */
+#cont-form {padding: 80px 0;background-attachment: fixed;}
+#loginSignup {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+    background-color: rgba(0,0,0,0.7);
+}
+
+#loginSignup h3 {font-size: 22px;color: #fff;margin-bottom: 15px;}
+#loginSignup .seprator {
+	width: 1px;
+	height: 100%;
+	background-color: rgba(255,255,255,0.5);
+	margin:auto;
+}
+
+/* Payment Page CSS */
+.pay-detail h2 {font-size: 25px;padding-bottom: 7px;border-bottom: 1px solid rgba(255,255,255,0.4);margin-bottom: 15px;}
+.pay-detail {
+    color: #fff;
+}
+
+/* Responsive CSS */
+@media only screen and (max-width: 767px) {
+	#banner h1 {font-size: 30px;}
+	form.searchForm {padding: 25px;}
+	form.searchForm input, form.searchForm select {margin-bottom: 10px;}
+	#about {padding: 50px 0}
+	#rooms h2 {font-size: 25px;}
+	#rooms {padding: 30px 0 40px}
+	.booking .booking-box .booking-box-head {font-size: 32px;}
+	form.login {margin-top: 35px;border-top: 1px solid #fff;padding-top: 30px;}
+  .pay-detail {margin-top: 25px;}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	form.searchForm {padding: 40px}
+	.searchForm .btn.btn-primary {line-height: 14px;}
+	#quick-dets {margin-top: 30px;}
+	form.login {margin-top: 35px;border-top: 1px solid #fff;padding-top: 30px;}
+
+}

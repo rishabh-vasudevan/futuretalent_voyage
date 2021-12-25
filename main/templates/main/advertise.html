@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Room Boooking</title>
+
+    <!-- Bootstrap Library CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/fontawesome-free-5.15.3-web/css/all.min.css">
+
+    <!-- Image Slider CSS -->
+    <link rel="stylesheet" href="/static/src/css/lightslider.css" />
+</head>
+
+<body>
+
+
+    <!-- Header Section -->
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/"><img src="/static/imgs/logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link " aria-current="page" href="/">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="rooms">Rooms List</a></li>
+                            {% if user.is_landlord %}
+                            <li class="nav-item"><a class="nav-link active" href="/advertise" >Advertisement</a></li>
+                            {% endif %}
+                            {% if user.is_admin %}
+                            <li class="nav-item"><a class="nav-link " href="/adminpage" >Verification</a></li>
+                            {% endif %}
+                            <li class="nav-item"><a class="nav-link" href="login">Login/Register</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Header Section End -->
+    <!-- Login Register Section -->
+    <section id="cont-form" style="background-image: url(/static/imgs/bg1.jpg);">
+        <div class="container">
+            <div id="loginSignup">
+                <div class="row">
+                    <div class="col-md-12 col-lg-12">
+                        <form action='advertise' method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <h3>Register</h3>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="id" placeholder="Room Id (only give if you want to update)" >
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="price" placeholder="Price" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="details" placeholder="Details" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="room_desc" placeholder="Room Description" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" name="address" placeholder="Address" required>
+                            </div>
+                            <div class="mb-3">
+                                <h5 style='color:white'>Add images</h5>
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="cover_image" placeholder="Address" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_1" placeholder="image_1" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_2" placeholder="image_2">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_3" placeholder="image_3">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_4" placeholder="image_4">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_5" placeholder="image_5">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_6" placeholder="image_6">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_7" placeholder="image_7">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_8" placeholder="image_8">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_9" placeholder="image_9">
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" class="form-control" name="image_10" placeholder="image_10">
+                            </div>
+                            <div>
+                                <button type="submit" class="btn btn-details-lg">Upload</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Login Register Section End -->
+
+    <!-- Footer Section -->
+    <footer >
+        <div class="container">
+            <p>© 2021 Voyage Rooms & Apartment. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Jquery Library -->
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Library JS -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Image Slider JS -->
+    <script src="/static/src/js/lightslider.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#image-gallery').lightSlider({
+                gallery: true,
+                item: 1,
+                thumbItem: 9,
+                slideMargin: 0,
+                speed: 800,
+                auto: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

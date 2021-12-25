@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>Room Boooking</title>
+
+    <!-- Bootstrap Library CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/custom.css">
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/fontawesome-free-5.15.3-web/css/all.min.css">
+
+    <!-- Image Slider CSS -->
+    <link rel="stylesheet" href="/static/src/css/lightslider.css" />
+</head>
+
+<body>
+
+
+    <!-- Header Section -->
+    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="/"><img src="/static/imgs/logo.png"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="/home">Home</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="rooms">Rooms List</a></li>
+                            {% if user.is_admin %}
+                            <li class="nav-item"><a class="nav-link " href="/adminpage" >Verification</a></li>
+                            {% endif %}
+                            {% if user.is_landlord %}
+                            <li class="nav-item"><a class="nav-link " href="/advertise">Advertisement</a></li>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            {% load i18n %}
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                {% if redirect_field_value %}
+                                <input type="hidden" name="{{ redirect_field_name }}"
+                                    value="{{ redirect_field_value }}" />
+                                {% endif %}
+                                <li class="nav-item"><a class="nav-link" href="logout">{{user.username}}</a></li>
+                            </form>
+                            {% else %}
+                            <li class="nav-item"><a class="nav-link" href="login">Login/Register</a></li>
+                            {% endif %}
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- Rooms Detail Section -->
+
+    <section id="rooms">
+        <div class="container">
+            <h2>Room Complete Details</h2>
+            <div class="divider"></div>
+
+            <div class="row">
+                <div class="col-md-12 col-lg-8">
+                    <div class="item">
+                        <div class="clearfix">
+                            <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                                {% if object.image_1 %}
+                                <li data-thumb={{object.image_1.url}}>
+                                    <img src="{{object.image_1.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_2 %}
+                                <li data-thumb={{object.image_2.url}}>
+                                    <img src="{{object.image_2.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_3 %}
+                                <li data-thumb={{object.image_3.url}}>
+                                    <img src="{{object.image_3.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_4 %}
+                                <li data-thumb={{object.image_4.url}}>
+                                    <img src="{{object.image_4.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_5 %}
+                                <li data-thumb={{object.image_5.url}}>
+                                    <img src="{{object.image_5.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_6 %}
+                                <li data-thumb={{object.image_6.url}}>
+                                    <img src="{{object.image_6.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_7 %}
+                                <li data-thumb={{object.image_7.url}}>
+                                    <img src="{{object.image_7.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_8 %}
+                                <li data-thumb={{object.image_8.url}}>
+                                    <img src="{{object.image_8.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_9 %}
+                                <li data-thumb={{object.image_9.url}}>
+                                    <img src="{{object.image_9.url}}" />
+                                </li>
+                                {% endif %}
+                                {% if object.image_10 %}
+                                <li data-thumb={{object.image_10.url}}>
+                                    <img src="{{object.image_10.url}}" />
+                                </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-lg-4">
+                    <div id="quick-dets">
+                        <h3>₹ {{object.price}}</h3>
+                        <p class="mb-2">{{object.details}}</p>
+                        <p class="mb-2">{{object.room_desc}}</p>
+                        <p class="mb-2">{{object.address}}</p>
+                        <pclass="mb-2">{{object.user.email}}</p>
+                    </div>
+                    <form id="bookingForm" action='book' method='GET'>
+                        <div class="box">
+                            <input type="hidden" name="id" value="{{object.room_id}}">
+                            <h3>Book Now</h3>
+                            <div class="mb-4">
+                                <input type="date" name="arrive" class="form-control" required="true">
+                            </div>
+                            <div class="mb-4">
+                                <input type="date" name="departure" class="form-control" required="true">
+                            </div>
+                            <div class="mb-4">
+                                <select name="adults" class="form-control" required='true'>
+                                    <option value=''>Members</option>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                    <option value='6'>6</option>
+                                </select>
+                            </div>
+                            <div class="">
+                                <input type='submit' value='Book Now' style="width: 100%" class="btn btn-details-lg">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section>
+        <div class="container mt-5" >
+            <div class="d-flex justify-content-center row" >
+                <div class="col-md-12">
+                    <h3>Comment Section</h3>
+                    <div class="d-flex flex-column comment-section">
+                        {% for j in object1 %}
+                        <div class="bg-white p-2 " style = 'margin-bottom:10px'>
+                            <div class="d-flex flex-row user-info">
+                                <div class="d-flex flex-column justify-content-start ml-2"><span class="d-block font-weight-bold name"><strong>{{j.user}}</strong></span><span class="date text-black-50">Shared publicly - {{j.created_at}}</span></div>
+                            </div>
+                            <div class="mt-2">
+                                <p class="comment-text">{{j.comment}}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <h5 style='margin-top:20px'>Add Commnent</h5>
+                        <form class="bg-light p-2" action ='/comment' method='post'>
+                            {% csrf_token %}
+                            <input type="hidden" value='{{object.room_id}}' name = 'id'>
+                            <div class="d-flex flex-row align-items-start"><textarea class="form-control ml-1 shadow-none textarea" placeholder='Add comment here' name='comment'></textarea></div>
+                            <div class="mt-2 text-right"><input  class="btn btn-details-lg" type="submit" value = "Post comment"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </section>
+
+    <!-- Footer Section -->
+    <footer >
+        <div class="container">
+            <p>© 2021 Voyage Rooms & Apartment. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Footer Section End -->
+
+    <!-- Jquery Library -->
+    <script src="/static/js/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap Library JS -->
+    <script src="/static/js/bootstrap.min.js"></script>
+
+    <!-- Image Slider JS -->
+    <script src="/static/src/js/lightslider.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#image-gallery').lightSlider({
+                gallery: true,
+                item: 1,
+                thumbItem: 9,
+                slideMargin: 0,
+                speed: 800,
+                auto: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
