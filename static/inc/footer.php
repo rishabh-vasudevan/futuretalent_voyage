@@ -2,7 +2,7 @@
 <!-- Footer Section -->
 <footer>
 	<div class="container">
-		<p>© 2021 Voyage Rooms & Apartment. All Rights Reserved.</p>
+		<p>© 2021 Stay for Studets Rooms & Apartment. All Rights Reserved.</p>
 	</div>
 </footer>
 
